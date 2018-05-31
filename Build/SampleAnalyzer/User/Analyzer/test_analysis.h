@@ -15,6 +15,9 @@ class test_analysis : public AnalyzerBase
   virtual bool Execute(SampleFormat& sample, const EventFormat& event);
 
  private:
+  std::vector<RecLeptonFormat> GetBaselineElectrons(const std::vector<RecLeptonFormat>& candidate_electrons);
+  std::vector<RecLeptonFormat> GetBaselineMuons(const std::vector<RecLeptonFormat>& candidate_muons);
+  std::vector<RecJetFormat> GetBaselineJets(const std::vector<RecJetFormat>& candidate_jets);
 };
 }
 
