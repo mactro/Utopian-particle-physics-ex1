@@ -18,6 +18,18 @@ class test_analysis : public AnalyzerBase
   std::vector<RecLeptonFormat> GetBaselineElectrons(const std::vector<RecLeptonFormat>& candidate_electrons);
   std::vector<RecLeptonFormat> GetBaselineMuons(const std::vector<RecLeptonFormat>& candidate_muons);
   std::vector<RecJetFormat> GetBaselineJets(const std::vector<RecJetFormat>& candidate_jets);
+  std::vector<RecLeptonFormat> GetSignalElectrons(const std::vector<RecLeptonFormat>& baseline_electrons);
+  std::vector<RecLeptonFormat> GetSignalMuons(const std::vector<RecLeptonFormat>& baseline_muons);
+  std::vector<RecJetFormat> GetSignalJets(const std::vector<RecJetFormat>& baseline_jets);
+
+  /**
+   * @brief Removes overlaping jets and leptons
+   * @param jets
+   * @param electrons
+   * @param muons
+   */
+  void RemoveOverlap(std::vector<RecJetFormat>& jets, std::vector<RecLeptonFormat>& electrons,
+                     std::vector<RecLeptonFormat>& muons);
 };
 }
 
